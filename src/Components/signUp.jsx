@@ -29,7 +29,7 @@ function SignUp() {
             </label>
         </div>
         <div className="signUpBox">
-        <p12>Create Account</p12>   
+        <p12>Create Accountttt</p12>   
         {/* <form action="#" method="post"> */}
                 <div class="SignUpContainer">
                     {/* <table className="signUptable">
