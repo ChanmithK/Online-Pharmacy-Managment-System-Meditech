@@ -34,6 +34,13 @@ function Sidebar() {
 					className='row'>
 					History
 				</NavLink>
+				<NavLink
+					style={{ textDecoration: "none" }}
+					to='/login'
+					activeClassName='active-nav'
+					className='row'>
+					Login
+				</NavLink>
 			</ul>
 		</div>
 	);

@@ -3,6 +3,7 @@ import logo from "../images/logo.png";
 import user from "../images/user.png";
 import Sidebar from "./Sidebar";
 import logout from "../images/logout.png";
+import home from "./Home";
 
 function MainContainer() {
 	return (
