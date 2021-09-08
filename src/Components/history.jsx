@@ -13,6 +13,22 @@ function History() {
                 <Sidebar />
                 <img src={logout} className='logout' />
             </div>
+            <div className="invoiceTable">
+            <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Time</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* { this.invoiceList() } */}
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

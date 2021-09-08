@@ -6,8 +6,9 @@ import logout from "../images/logout.png";
 import homeVector from "../images/homevector.png"
 import homeEllipse from "../images/homeEllipse.png"
 import homeBanner from "../images/banner.png"
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+ 
 
 function Home() {
 
@@ -26,9 +27,9 @@ function Home() {
                     <img src={homeVector} className='homeVector' />
                     <img src={homeEllipse} className='homeEllipse' />
                     <p1>PRESCRIPTION medicine at your DOORSTEP</p1>
-                    <NavLink to='/makeOrder'>
+                    <Link to= "/makeOrder">
                         <button type="button" className = "homeButton" >Order Now</button>
-                    </NavLink>
+                    </Link>
                 </div>
                 <div className = "homebox2">
                     <img src={homeBanner} className='homeBanner' />   

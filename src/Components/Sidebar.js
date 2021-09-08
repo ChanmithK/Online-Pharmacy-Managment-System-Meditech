@@ -36,10 +36,10 @@ function Sidebar() {
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to='/login'
+					to='/profile'
 					activeClassName='active-nav'
 					className='row'>
-					Login
+					Profile
 				</NavLink>
 			</ul>
 		</div>

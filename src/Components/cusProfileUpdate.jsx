@@ -4,7 +4,8 @@ import signUpEllipse from "../images/signUpEllipse.png";
 import { NavLink } from "react-router-dom";
 import logo2 from "../images/logo.png";
 import axios from 'axios'
-class  SignUp extends Component {
+import { Redirect } from "react-router-dom";
+class  ProfileUpdate extends Component {
     
         constructor(props){
             super(props);
@@ -35,6 +36,27 @@ class  SignUp extends Component {
                 password:'',
                 submit:false
             }
+        }
+
+        componentDidMount(){
+            axios.get('http://localhost:4003/customer/'+this.props.match.params.nic)
+            .then( response => {
+               this.setState ({
+                nic:response.data.nic,
+                firstName:response.data.firstName,
+                lastName:response.data.lastName,
+                email:response.data.email,
+                phone:response.data.phone,
+                street:response.data.street,
+                city:response.data.city,
+                province:response.data.province,
+                pCode:response.data.pCode,
+                password:response.data.password, 
+               })
+            })
+            .catch(function(error) {
+                console.log(error)
+            })
         }
 
     
@@ -89,28 +111,10 @@ class  SignUp extends Component {
                 password: e.target.value
             });
         }
-        
+
         onSubmit(e) {
             e.preventDefault();
-            
-    
-            console.log(`Form submitted:`);
-            console.log(`nic: ${this.state.nic}`);
-            console.log(`Fname: ${this.state.firstName}`);
-            console.log(`Lname: ${this.state.lastName}`);
-            console.log(`Email: ${this.state.email}`);
-            console.log(`Phone: ${this.state.phone}`);
-            console.log(`Street: ${this.state.street}`);
-            console.log(`City: ${this.state.city}`);
-            console.log(`Province: ${this.state.province}`);
-            console.log(`PCode: ${this.state.pCode}`);
-            console.log(`password: ${this.state.password}`);
-            console.log(`submit: ${this.state.submit}`);
-            
-
-
-    
-            const newSignUp = {
+            const obj = {
                 nic:this.state.nic,
                 firstName:this.state.firstName,
                 lastName:this.state.lastName,
@@ -122,25 +126,58 @@ class  SignUp extends Component {
                 pCode:this.state.pCode,
                 password:this.state.password,
                 submit:this.state.submit
-            }
+            };
+            axios.post('http://localhost:4003/customer/'+this.props.match.params.nic,obj)
+            .then(res => console.log(res.data));
+
+            this.props.history.push('/');
     
-            axios.post('http://localhost:4003/customer/sign-up', newSignUp)
-            .then(res => { this.props.history.push('/home')});
-           
+        //     console.log(`Form submitted:`);
+        //     console.log(`nic: ${this.state.nic}`);
+        //     console.log(`Fname: ${this.state.firstName}`);
+        //     console.log(`Lname: ${this.state.lastName}`);
+        //     console.log(`Email: ${this.state.email}`);
+        //     console.log(`Phone: ${this.state.phone}`);
+        //     console.log(`Street: ${this.state.street}`);
+        //     console.log(`City: ${this.state.city}`);
+        //     console.log(`Province: ${this.state.province}`);
+        //     console.log(`PCode: ${this.state.pCode}`);
+        //     console.log(`password: ${this.state.password}`);
+        //     console.log(`submit: ${this.state.submit}`);
+            
+
+
     
-            this.setState({
-                nic:'',
-                firstName:'',
-                lastName:'',
-                email:'',
-                phone:'',
-                street:'',
-                city:'',
-                province:'',
-                pCode:'',
-                password:'',
-                submit:false
-            })
+        //     const newSignUp = {
+        //         nic:this.state.nic,
+        //         firstName:this.state.firstName,
+        //         lastName:this.state.lastName,
+        //         email:this.state.email,
+        //         phone:this.state.phone,
+        //         street:this.state.street,
+        //         city:this.state.city,
+        //         province:this.state.province,
+        //         pCode:this.state.pCode,
+        //         password:this.state.password,
+        //         submit:this.state.submit
+        //     }
+    
+        //     axios.post('http://localhost:4003/customer/sign-up', newSignUp)
+        //     .then(res => {return <Redirect to ="/login"/>});
+    
+        //     this.setState({
+        //         nic:'',
+        //         firstName:'',
+        //         lastName:'',
+        //         email:'',
+        //         phone:'',
+        //         street:'',
+        //         city:'',
+        //         province:'',
+        //         pCode:'',
+        //         password:'',
+        //         submit:false
+        //     })
     
         }
         
@@ -229,4 +266,4 @@ class  SignUp extends Component {
     }
 }
 
-export default SignUp
+export default ProfileUpdate

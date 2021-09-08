@@ -1,10 +1,67 @@
-import React from "react";
+import React, {Component} from "react";
 import logo from "../images/logo.png";
 import user from "../images/user.png";
 import Sidebar from "./Sidebar";
+import axios from 'axios'
 import logout from "../images/logout.png";
+import { Link } from "react-router-dom";
 
-function Order() {
+const Todo = props => (
+    <tr>
+        <td>{props.todo.orderId}</td>
+        <td>{props.todo.createdAt}</td>
+        <td>{props.todo.amount}</td>
+        <td>{props.todo.pharmacistStatus}</td>
+        <>              
+
+            {props.todo.pharmacistStatus === "processing" && (
+                    <td><div className="status-container" style={{ backgroundColor: "#92EF00" }}>{props.todo.pharmacistStatus}
+                    </div></td>
+            )} 
+            {props.todo.pharmacistStatus === "unavailable" && (
+                    <td><div className="status-container" style={{ backgroundColor: "#FA1809" }}>{props.todo.pharmacistStatus}</div></td>
+            )} 
+            {props.todo.pharmacistStatus === "pending" && (
+                    <td><div className="status-container" style={{ backgroundColor: "#F5FA09" }}>{props.todo.pharmacistStatus}</div>
+                        </td>
+            )} 
+            </>
+        <td>
+            <Link to = {"props.nic"}><button className="order-button">Accept</button></Link>
+        </td>
+        <td>
+            <Link to = {"props.nic"}><button className="order-button">Deny</button></Link>
+        </td>
+    </tr>
+)
+
+
+class Order extends Component {
+
+    constructor(props){
+        super(props);
+        
+
+        this.state = {todos:[]};
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:4003/order/')
+        .then(response => {
+            this.setState ({todos: response.data});
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+    }
+    
+    orderList(){
+        return this.state.todos.map(function(currentOrders, i) {
+            return <Todo todo={currentOrders} key={i}/>
+        });
+    }
+
+    render(){
     return (
         <div className='MainContainer'>
             <div className='containermini'>
@@ -27,10 +84,25 @@ function Order() {
                 
             </div>
             <div className="ordersTable">
-                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Time</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { this.orderList() }
+                    </tbody>
+                </table>
             </div>
         </div>
     )
 }
+}
 
 export default Order
+
