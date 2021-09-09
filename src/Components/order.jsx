@@ -25,6 +25,10 @@ const Todo = props => (
                         </td>
             )} 
             </>
+        
+        <td>
+            <Link to = {"props.nic"}><button className="order-button">View</button></Link>
+        </td>
         <td>
             <Link to = {"props.nic"}><button className="order-button">Accept</button></Link>
         </td>
@@ -89,8 +93,9 @@ class Order extends Component {
                            <th style={{paddingLeft: "0px"}} >Order ID</th> 
                            <th style={{paddingLeft: "0px"}}>Time</th> 
                            <th style={{paddingLeft: "0px"}}>Amount</th> 
-                           <th style={{paddingLeft: "12px"}}>Status</th> 
-                           <th style={{paddingLeft: "52px"}}>Action</th> 
+                           <th style={{paddingLeft: "12px"}}>Status</th>
+                           <th style={{paddingLeft: "52px"}}>Invoice</th>  
+                           {/* <th style={{paddingLeft: "52px"}}>Action</th>  */}
                         </tr>
                     </thead>
                     <tbody>

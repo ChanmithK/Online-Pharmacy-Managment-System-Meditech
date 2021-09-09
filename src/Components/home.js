@@ -6,22 +6,26 @@ import logout from "../images/logout.png";
 import homeVector from "../images/homevector.png"
 import homeEllipse from "../images/homeEllipse.png"
 import homeBanner from "../images/banner.png"
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 
  
 
 function Home() {
 
-    
+    const history =useHistory();
     const [payableCount] = useState("08");
     const [activeCount] = useState("03");
+    const logout = ()=>{
+        localStorage.removeItem("user");
+        history.push("/login");
+    }
     return (
         <div className='MainContainer'>
                 <div className='containermini'>
                     <img src={logo} className='logo' />
                     <img src={user} className='user' />
                     <Sidebar />
-                    <img src={logout} className='logout' />
+                    <img src={logout} onClick={logout} className='logout' />
                 </div>
                 <div className = "homebox1">
                     <img src={homeVector} className='homeVector' />

@@ -6,6 +6,8 @@ import logout from "../images/logout.png";
 import axios from 'axios'
 import { useState } from "react";
 import makeOrdervector from "../images/makeOrdervector.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Order() {
     const [file, setFile] = useState(null);
@@ -22,10 +24,11 @@ function Order() {
 
         axios.post('http://localhost:4003/images/upload',data)
         .then((e) => {
-            console.log('Success')
+            toast.success('Upload Success')
+            
         })
         .catch ((e) => {
-            console.error('Error',e)
+            toast.error('Upload Error')
         })
     };
 
@@ -51,6 +54,7 @@ function Order() {
                         <textarea rows="4" cols="50" className="makeOrderDesc" name="comment" placeholder="Enter Description" form="usrform"/>
                     </div> */}
                     <button type="submit" className = "MakeOrderButton" >Submit</button>
+                    <ToastContainer />
                 </form>
             </div>
         </div>

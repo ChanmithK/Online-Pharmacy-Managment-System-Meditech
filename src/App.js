@@ -6,11 +6,27 @@ import invoice from "./Components/invoice";
 import makeOrder from "./Components/makeOrder"
 import login from "./Components/Login2"
 import signUp from "./Components/signUp";
-import profileUpdate from "./Components/cusProfileUpdate"
+import profileUpdate from "./Components/cusProfileUpdate2"
 import profile from "./Components/cusProfile2"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useStateValue } from './StateProvider';
+import { actionTypes } from './reducer';
 
 function App() {
+
+	const [{user}, dispatch] = useStateValue();
+
+	let savedUser = localStorage.getItem('user');
+
+	if(savedUser !== null && user===null) {
+		savedUser = savedUser.split(",");
+		dispatch({
+			type: actionTypes.SET_USER,
+			user: savedUser[0],
+			token: savedUser[1],
+		});
+	}
+
 	return (
 		<Router>
 			<div className='App'>

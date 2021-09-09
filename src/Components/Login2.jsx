@@ -26,6 +26,8 @@ function Login2() {
         axios.post('http://localhost:4003/customer/login', newLogin)
         .then(res => {
             console.log(res.data);
+            var userArray = [nic,res.data.token];
+            localStorage.setItem('user', userArray);
             dispatch({
                 type: actionTypes.SET_USER,
                 user: nic,
