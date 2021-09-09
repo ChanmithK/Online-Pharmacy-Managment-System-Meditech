@@ -9,9 +9,8 @@ import { Link } from "react-router-dom";
 const Todo = props => (
     <tr>
         <td>{props.todo.orderId}</td>
-        <td>{props.todo.createdAt}</td>
+        <td>{props.todo.time}</td>
         <td>{props.todo.amount}</td>
-        <td>{props.todo.pharmacistStatus}</td>
         <>              
 
             {props.todo.pharmacistStatus === "processing" && (
@@ -87,11 +86,11 @@ class Order extends Component {
                 <table>
                     <thead>
                         <tr>
-                            <th>Order ID</th>
-                            <th>Time</th>
-                            <th>Amount</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                           <th style={{paddingLeft: "0px"}} >Order ID</th> 
+                           <th style={{paddingLeft: "0px"}}>Time</th> 
+                           <th style={{paddingLeft: "0px"}}>Amount</th> 
+                           <th style={{paddingLeft: "12px"}}>Status</th> 
+                           <th style={{paddingLeft: "52px"}}>Action</th> 
                         </tr>
                     </thead>
                     <tbody>

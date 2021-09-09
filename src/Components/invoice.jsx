@@ -63,10 +63,9 @@ class Invoice extends Component {
                     <thead>
                         <tr>
                             <th>Order ID</th>
-                            <th>Time</th>
+                            <th>Invoice ID</th>
+                            <th>Date</th>
                             <th>Amount</th>
-                            <th>Status</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

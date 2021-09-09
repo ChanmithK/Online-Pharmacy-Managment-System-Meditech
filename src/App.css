@@ -514,6 +514,7 @@ input[type=file]::file-selector-button {
     top: 138px;
     background: rgba(255, 255, 255, 0.68);
     border-radius: 30px;
+    overflow: auto;
 }
 
 .loginBox{
@@ -776,13 +777,14 @@ input[type=text], input[type=password], input[type=number],input[type=tel] {
   width: 135px;
   color: rgb(0, 0, 0);
 }
-.order-button{
+.order-button {
   background-color: #0464fc;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-size: 17px;
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 7px;
+  padding-top: 4px;
   margin-left: 10px;
   height: 28px;
   border-radius: 12px;
@@ -791,8 +793,89 @@ input[type=text], input[type=password], input[type=number],input[type=tel] {
 }
 
 .status-container {
-  padding-left: 10px;
-  width: 130px;
+  padding-left: 16px;
+  width: 114px;
   height: 28px;
   border-radius: 12px;
+  padding-top: 4px;
+}
+
+.invoiceTable table{
+  font-family: "Poppins", sans-serif;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 92%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 300px;
+  margin-top: 30px;
+}
+
+.invoiceTable td {
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 70px;
+  font-weight: normal;
+  width: 64px;
+  color: rgb(0, 0, 0);
+}
+.invoiceTable thead{
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 20px;
+  font-weight: normal;
+  width: 135px;
+  color: rgb(0, 0, 0);
+}
+
+.historyTable{
+  position: absolute;
+  width: 800px;
+  height: 386px;
+  left: 276px;
+  top: 138px;
+  background: rgba(255, 255, 255, 0.68);
+  border-radius: 30px;
+  overflow: auto;
+}
+
+.historyTable table{
+  font-family: "Poppins", sans-serif;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 92%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 300px;
+  margin-top: 30px;
+}
+
+.historyTable td{
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 65px;
+  font-weight: normal;
+  width: 81px;
+  color: rgb(0, 0, 0);
+}
+
+.historyTable thead{
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 20px;
+  font-weight: normal;
+  width: 135px;
+  color: rgb(0, 0, 0);
 }
