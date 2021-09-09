@@ -71,7 +71,9 @@ function ToDo (props){
                         </td>&nbsp; &nbsp;
                         <td>
                         <label for="lname"><b>Last Name</b></label>
-                        <input type="text" name="lname" value={lastName} required/> 
+                        <input type="text" name="lname"
+                        onChange={ (e)=>{setLastname(e.target.value)} }
+                        value={lastName} required/> 
                         </td>
                     </tr>
                 </table>
@@ -79,35 +81,47 @@ function ToDo (props){
                 <input type="text" name="nic" value={nic}
                     /></label>
                 <label for="phone" ><b>Phone</b>
-                <input type="tel" name="phone"  value={phone}
+                <input type="tel" name="phone"  
+                onChange={ (e)=>{setPhone(e.target.value)} }
+                value={phone}
                     required/></label>  
                 <label for="email" ><b>Email</b>
-                <input type="text" name="email"  value={email}
+                <input type="text" name="email"  
+                onChange={ (e)=>{setEmail(e.target.value)} }
+                value={email}
                     required/></label>
 
                 <table className="signUptable">
                     <tr>
                         <td>
                         <label for="street" ><b>Street</b>
-                        <input type="text" name="street"  value={street}
+                        <input type="text" name="street"  
+                        onChange={ (e)=>{setStreet(e.target.value)} }
+                        value={street}
                     required/></label>
                         </td>&nbsp; &nbsp;
                         <td>
                         <label for="city"><b>City</b></label>
-                        <input type="text" name="city"  value={city}
+                        <input type="text" name="city"  
+                        onChange={ (e)=>{setCity(e.target.value)} }
+                        value={city}
                     required/> 
                         </td>
                     </tr>
                     <tr>
                         <td>
                         <label for="province" ><b>Province</b>
-                        <input type="text" name="province"  value={province}
+                        <input type="text" name="province"  
+                        onChange={ (e)=>{setProvince(e.target.value)} }
+                        value={province}
                     required/>
                             </label>
                         </td>&nbsp; &nbsp;
                         <td>
                         <label for="pcode"><b>Postal code</b></label>
-                        <input type="number" name="pcode" value={postal}
+                        <input type="number" name="pcode" 
+                        onChange={ (e)=>{setPostal(e.target.value)} }
+                        value={postal}
                     required/> 
                         </td>
                     </tr>
