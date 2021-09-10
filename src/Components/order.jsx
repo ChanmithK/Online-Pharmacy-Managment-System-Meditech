@@ -27,14 +27,32 @@ const Todo = props => (
             </>
         
         <td>
-            <Link to = {"props.nic"}><button className="order-button">View</button></Link>
+            <Link to = {"props.nic"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>View</button></Link>
         </td>
-        <td>
-            <Link to = {"props.nic"}><button className="order-button">Accept</button></Link>
-        </td>
-        <td>
-            <Link to = {"props.nic"}><button className="order-button">Deny</button></Link>
-        </td>
+        
+        <>              
+
+                {props.todo.pharmacistStatus === "processing" && (
+                    <div>    
+                         <td> <Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc52" }}>Accept</button></Link></td>
+                         <td><Link to = {"props.nic"}><button className="order-button"style={{ backgroundColor: "#0464fc" }}>Deny</button></Link></td> 
+                    </div>
+                )} 
+                {props.todo.pharmacistStatus === "unavailable" && (
+                    <div>    
+                        <td> <Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }} >Accept</button></Link></td>
+                        <td><Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>Deny</button></Link></td> 
+                   </div>
+                )} 
+                {props.todo.pharmacistStatus === "pending" && (
+                    <div>    
+                        <td> <Link to = {"props.nic"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>Accept</button></Link></td>
+                        <td><Link to = {"props.nic"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>Deny</button></Link></td> 
+                   </div>
+                )} 
+        </>
+           
+        
     </tr>
 )
 

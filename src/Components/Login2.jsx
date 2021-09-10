@@ -6,7 +6,6 @@ import axios from 'axios'
 import { useStateValue } from '../StateProvider';
 import { actionTypes } from '../reducer';
 import { Link, useHistory } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Login2() {
@@ -34,9 +33,12 @@ function Login2() {
                 token: res.data.token,
             });
             history.push("/");
-        });
+        })
+        .catch ((e) => {
+            alert("You have entered an invalid username or password");
+        })
     }
-    const notify = () => toast("Please Fill all the feilds");
+    
     
     return (
         
@@ -52,11 +54,10 @@ function Login2() {
             <form onSubmit ={handleSubmit}>
                 <div class="loginContainer">
                     <label for="uname"><b>NIC</b></label>
-                    <input type="number" placeholder="Enter NIC" value={nic} onChange = {(e)=>{setNic(e.target.value)}} name="uname" required/>
+                    <input type="text" placeholder="Enter NIC" value={nic} onChange = {(e)=>{setNic(e.target.value)}} name="uname" required/>
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" value={password} onChange = {(e)=>{setPassword(e.target.value)}} name="psw" required/>   
-                    <button type="submit" onClick={notify}>Sign in</button>
-                    <ToastContainer />
+                    <button type="submit">Sign in</button>
                     <label>
                       <span className="psw">Forgot <a href="#">password?</a></span>
                     </label>

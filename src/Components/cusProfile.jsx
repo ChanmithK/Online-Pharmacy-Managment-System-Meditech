@@ -3,7 +3,7 @@ import SignUpVector from "../images/signUpVector.png";
 import signUpEllipse from "../images/signUpEllipse.png";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import logo2 from "../images/logo.png";
+import logo2 from "../images/profileUser.png";
 import axios from 'axios'
 
 

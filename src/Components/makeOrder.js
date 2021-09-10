@@ -5,11 +5,13 @@ import Sidebar from "./Sidebar";
 import logout from "../images/logout.png";
 import axios from 'axios'
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import makeOrdervector from "../images/makeOrdervector.png";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Order() {
+    const history = useHistory();
     const [file, setFile] = useState(null);
     const onInputChange = (e) =>{
         setFile(e.target.files[0])
@@ -19,12 +21,14 @@ function Order() {
         e.preventDefault()
 
         const data = new FormData();
+       
 
         data.append('file',file);
 
         axios.post('http://localhost:4003/images/upload',data)
         .then((e) => {
-            toast.success('Upload Success')
+            alert('Prescription upload successfully')
+            history.push("/home");
             
         })
         .catch ((e) => {
@@ -44,7 +48,7 @@ function Order() {
                 <img src={makeOrdervector} className='makeOrdervector' />  
                 <p7>ORDER NOW & PAY LATER...</p7>
                 <p6>Order Now</p6>
-                <form onSubmit={onSubmit }>
+                <form onSubmit={onSubmit}>
                     <label for="fileUpload">Prescription</label>
                     <div className="makeOrderbox2">
                         <input className="makeOrderAttach" type="file" onChange ={onInputChange} id="fileUpload"/>

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component,useState} from "react";
 import logo from "../images/logo.png";
 import user from "../images/user.png";
 import Sidebar from "./Sidebar";
@@ -22,7 +22,6 @@ const Todo = props => (
 )
 
 class Invoice extends Component {
-
     
     constructor(props){
         super(props);
@@ -59,6 +58,7 @@ class Invoice extends Component {
             </div>
 
             <div className="invoiceTable">
+            <input type="text" placeholder="Search here.."/>  
             <table>
                     <thead>
                         <tr>

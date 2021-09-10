@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
-import SignUpVector from "../images/signUpVector.png";
+import SignUpVector from "../images/profileUser.png";
 import signUpEllipse from "../images/signUpEllipse.png";
+import backNav from "../images/back.png";
 import { Link } from "react-router-dom";
 import logo2 from "../images/logo.png";
 import axios from 'axios'
@@ -34,7 +35,7 @@ function ToDo (props){
 
     return(
         <form >
-            <div class="SignUpContainer">
+            <div class="ProfileContainer">
                 <table className="signUptable">
                     <tr>
                         <td>
@@ -84,12 +85,6 @@ function ToDo (props){
                         </td>
                     </tr>
                 </table>
-
-                {/* <label for="psw"><b>Password</b></label>
-                <input type="password" name="psw" value={this.state.password}
-                    />      */}
-                {/* <label for="cpsw"><b>Confirm Password</b></label>
-                <input type="password" name="cpsw" required/> */}
                 <Link to={"/profileUpdate/"}>
                 <button type="submit">Edit Info</button>
                 </Link>
@@ -124,15 +119,13 @@ function CusProfile2() {
         ):(
             <div className='MainContainer'>
                 <div className= "signUplink">
-                    <img src={logo2} className='logo2' />
-                    <img src={SignUpVector} className='SignUpVector' />
-                    <img src={signUpEllipse} className='signUpEllipse' />
-                    <label>
-                            <span class="snup">Already have an account? <Link to='/login'>Sign in</Link></span>
-                    </label>
+                    <img src={logo2} className='profileLogo' />
+                    <img src={SignUpVector} className='ProfileUpVector' />
+                    <img src={signUpEllipse} className='ProfileEllipse' />
                 </div>
-                <div className="signUpBox">
-                    <p12>Create Account</p12>
+                <div className="profileBox">
+                    <Link to ="/home" ><img src={backNav} className='backNav' /></Link>
+                    <p12>Profile</p12>
                     <ToDo todo={todos}/>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import logo from "../images/logo.png";
 import user from "../images/user.png";
 import Sidebar from "./Sidebar";
-import logout from "../images/logout.png";
+import logout1 from "../images/logout.png";
 import homeVector from "../images/homevector.png"
 import homeEllipse from "../images/homeEllipse.png"
 import homeBanner from "../images/banner.png"
@@ -25,7 +25,7 @@ function Home() {
                     <img src={logo} className='logo' />
                     <img src={user} className='user' />
                     <Sidebar />
-                    <img src={logout} onClick={logout} className='logout' />
+                    <img src={logout1} onClick={logout} className='logout' />
                 </div>
                 <div className = "homebox1">
                     <img src={homeVector} className='homeVector' />
