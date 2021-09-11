@@ -1,0 +1,1092 @@
+.App {
+	width: 100vw;
+	height: 100vh;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #4d97fb;
+	position: relative;
+}
+
+.Sidebar {
+	width: 240px;
+	margin-top: 220px;
+}
+
+.SidebarList {
+	height: auto;
+	padding: 0;
+	width: 100%;
+	font-family: "Poppins", sans-serif;
+	list-style-type: none;
+}
+
+.SidebarList .row {
+	width: 100%;
+	height: 40px;
+	list-style-type: none;
+	margin: 0%;
+	color: #272727;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0px;
+	text-decoration: none;
+}
+
+.SidebarList .row:hover {
+	cursor: pointer;
+	background-color: #f6faff;
+	border-radius: 0 30px 30px 0;
+}
+
+.active-nav{
+	background-color: #f6faff;
+	border-radius: 0 30px 30px 0;
+}
+
+.SidebarList #active {
+	background-color: #f6faff;
+	border-radius: 0 30px 30px 0;
+}
+
+.MainContainer {
+	position: absolute;
+	margin: auto;
+	width: 1120px;
+	height: 560px;
+	right: 80px;
+	left: 80px;
+	top: 80px;
+	bottom: 80px;
+	background: rgba(255, 255, 255, 0.51);
+	border-radius: 40px;
+}
+
+.SideContainer {
+	position: absolute;
+	width: 240px;
+	height: 560px;
+	right: 80px;
+	left: 124px;
+	top: 53px;
+	bottom: 80px;
+	background: rgba(255, 255, 255, 0.68);
+	backdrop-filter: blur(5px);
+	border-radius: 40px 0px 0px 40px;
+}
+
+.containermini {
+	position: absolute;
+	width: 240px;
+	height: 560px;
+	right: 80px;
+	left: 0;
+	top: 0;
+	bottom: 80px;
+	background: rgba(255, 255, 255, 0.68);
+	backdrop-filter: blur(5px);
+	border-radius: 40px 0px 0px 40px;
+}
+
+.logo {
+	position: absolute;
+	width: 155.05px;
+	height: 44px;
+	left: 42px;
+	top: 40px;
+}
+
+.user {
+	position: absolute;
+	width: 104px;
+	height: 104px;
+	left: 67px;
+	top: 106px;
+}
+
+.logout {
+  position: absolute;
+  width: 26.75px;
+  height: 35.6px;
+  left: 108px;
+  top: 452px;
+}
+
+.homebox1{
+	position: absolute;
+    width: 330px;
+    height: 480px;
+    left: 289px;
+    top: 42px;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 40px;
+}
+
+.homebox2 {
+    position: absolute;
+    width: 430px;
+    height: 218px;
+    left: 653px;
+    top: 42px;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 30px;
+}
+
+.homebox3{
+	position: absolute;
+    width: 200px;
+    height: 230px;
+    left: 653px;
+    top: 292px;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 30px;
+}
+
+.homebox4{
+	position: absolute;
+    width: 200px;
+    height: 230px;
+    left: 883px;
+    top: 292px;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 30px;
+}
+
+.homeVector{
+	position: absolute;
+    width: 285.01px;
+    height: 289px;
+    left: 25px;
+    top: 11px;
+
+}
+
+.homeEllipse{
+	position: absolute;
+    width: 311px;
+    height: 16px;
+    left: 8px;
+    top: 296px;
+}
+
+.homebox1 p1 {
+	position: absolute;
+    width: 253px;
+    height: 60px;
+    left: 41px;
+    top: 335px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: #125465;
+
+}
+
+.homeButton{
+		position: absolute;
+		background-color: #0464FC;
+		color: white;
+		padding: 29px 24px;
+		left: 85px;
+		top: 406px;
+		margin: 3px 11px;
+		border: none;
+		cursor: pointer;
+		width: 43%;
+		padding-top: 8px;
+		height: 39px;
+		border-radius: 13px;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-size: 19px;
+}
+
+.homeButton:hover {
+    opacity: 0.8;
+  }
+
+  .homeBanner {
+    position: absolute;
+    width: 408px;
+    height: 190.41px;
+    left: 17px;
+    top: 17.02px;
+}
+
+.homebox3 p2 {
+	position: absolute;
+    width: 253px;
+    height: 58px;
+    left: -29px;
+    top: 41px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 26px;
+    text-align: center;
+    color: #125465;
+
+}
+
+.homebox4 p3 {
+	position: absolute;
+    width: 253px;
+    height: 58px;
+    left: -29px;
+    top: 41px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 26px;
+    text-align: center;
+    color: #125465;
+
+}
+
+.homebox4 p4 {
+	position: absolute;
+    width: 250px;
+    height: 64px;
+    left: -29px;
+    top: 117px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 26px;
+    text-align: center;
+    color: #0464fc;
+
+}
+
+.homebox3 p5 {
+	position: absolute;
+    width: 250px;
+    height: 64px;
+    left: -29px;
+    top: 117px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 26px;
+    text-align: center;
+    color: #0464fc;
+
+}
+
+.makeOrderbox1{
+	position: absolute;
+    width: 370px;
+    height: 480px;
+    left: 282px;
+    top: 40px;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 40px;
+	}
+
+.makeOrdervector{
+	position: absolute;
+    width: 435px;
+    height: 435px;
+    left: 388px;
+    top: -6px;
+}	
+
+.makeOrderbox1 p6{
+    position: absolute;
+    width: 301px;
+    height: 90px;
+    left: 32px;
+    top: 15px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 60px;
+    color: #125465;
+}
+
+.makeOrderbox1 p7{
+    position: absolute;
+    width: 302px;
+    height: 90px;
+    left: 478px;
+    top: 402px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 60px;
+    color: #125465;
+}
+
+.makeOrderbox2{
+    position: absolute;
+    width: 303px;
+    height: 58px;
+    right: 32px;
+    top: 142px;
+    background: #FFFFFF;
+    border-radius: 13.2153px;
+}
+
+.makeOrderbox1 label{
+    position: absolute;
+    left: 32px;
+    top: 87px;
+    bottom: 55.73%;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 37px;
+    color: #125465;
+}
+
+input[type=file]::file-selector-button {
+    border: 2px solid  rgb(218, 207, 207);;
+    padding: .2em .4em;
+    border-radius: 7px;
+    background-color: #f1eeee;
+    transition: 0.7s;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background-color: #0464FC;
+    border: 2px solid #064ab9;
+    color: white;
+  }
+
+  .makeOrderAttach{
+    position: absolute;
+    right: 44px;
+    top: 18px;
+  }
+  
+  .makeOrderbox1 label1{
+    position: absolute;
+    left: 32px;
+    top: 229px;
+    bottom: 55.73%;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 37px;
+    color: #125465;
+}
+
+  .makeOrderbox3 textarea{
+    position: absolute;
+    width: 301px;
+    height: 87px;
+    left: 32px;
+    top: 284px;
+    background: #FFFFFF;
+    border-radius: 13.2153px;
+    border: none;
+    resize: none;
+    box-sizing: border-box;
+    padding-left: 12px;
+    padding-top: 10px;
+    padding-bottom: 37px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .MakeOrderButton{
+    position: absolute;
+    background-color: #0464FC;
+    color: white;
+    padding: 29px 24px;
+    left: 91px;
+    top: 406px;
+    margin: 1px -58px;
+    border: none;
+    cursor: pointer;
+    width: 301px;
+    padding-top: 8px;
+    height: 38px;
+    border-radius: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 19px;
+}
+/* .ViewImage{
+    position: absolute;
+    background-color: #0464FC;
+    color: white;
+    padding: 29px 24px;
+    left: 91px;
+    top: 406px;
+    margin: 1px -58px;
+    border: none;
+    cursor: pointer;
+    width: 301px;
+    padding-top: 8px;
+    height: 38px;
+    border-radius: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 19px;
+
+} */
+
+.ImageViewe{
+    width: 521px;
+    padding-left: 111px;
+    margin-left: 362px;
+    margin-top: 103px;
+}
+.ImageBox{
+  position: absolute;
+  width: 330px;
+  height: 480px;
+  left: 289px;
+  top: 42px;
+  background: rgba(255, 255, 255, 0.68);
+  border-radius: 40px;
+}
+
+.MakeOrderButton:hover {
+    opacity: 0.8;
+  }
+
+  .ordersMiniBox1{
+    position: absolute;
+    width: 228px;
+    height: 118px;
+    left: 854px;
+    top: 39px;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 30px;
+  }
+  .ordersMiniBox2{
+    position: absolute;
+    width: 228px;
+    height: 118px;
+    left: 570px;
+    top: 39px;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 30px;
+  }
+  .ordersMiniBox3{
+    position: absolute;
+    width: 228px;
+    height: 118px;
+    left: 284px;
+    top: 39px;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 30px;
+  }
+
+  .ordersTable{
+    position: absolute;
+    width: 800px;
+    height: 336px;
+    left: 282px;
+    top: 184px;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 30px;
+    overflow: auto;
+}
+
+.ordersMiniBox3 p8{
+    position: absolute;
+    width: 152px;
+    height: 42px;
+    left: 69px;
+    top: 8px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 42px;
+    font-family: "Poppins", sans-serif;
+    color: #125465;
+}
+.ordersMiniBox2 p9{
+    position: absolute;
+    width: 152px;
+    height: 42px;
+    left: 64px;
+    top: 8px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 42px;
+    font-family: "Poppins", sans-serif;
+    color: #125465;
+}
+.ordersMiniBox1 p10{
+    position: absolute;
+    width: 152px;
+    height: 42px;
+    left: 49px;
+    top: 8px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 42px;
+    font-family: "Poppins", sans-serif;
+    color: #125465;
+}
+.invoiceTable{
+    position: absolute;
+    width: 800px;
+    height: 386px;
+    left: 276px;
+    top: 138px;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 30px;
+    overflow: auto;
+}
+
+.loginBox{
+    position: absolute;
+    width: 431.58px;
+    height: 482px;
+    left: 636px;
+    top: 40px;
+    background: rgba(255, 255, 255, 0.59);
+    backdrop-filter: blur(17.4857px);
+    border-radius: 31.7922px;
+
+}
+
+.loginVector{
+    position: absolute;
+    width: 605.31px;
+    height: 515px;
+    left: 14px;
+    top: -21px;
+}
+
+ .loginEllipse{
+    position: absolute;
+    width: 616px;
+    height: 47px;
+    left: 7px;
+    top: 476px;
+} 
+
+.logo1{
+    position: absolute;
+    width: 254.34px;
+    height: 72.17px;
+    left: 32px;
+    top: 24.01px;
+}
+
+.loginBox p11{
+    position: absolute;
+    width: 244.01px;
+    height: 107.3px;
+    left: 32px;
+    top: 113.5px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 59px;
+    line-height: 107px;
+    color: #272727;
+}
+
+input[type=text], input[type=password], input[type=number],input[type=tel] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .optionInput{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  button {
+    background-color: #0464FC;
+    color: white;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 21px;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  .loginContainer {
+    padding: 16px;
+    margin-top: 196px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  span.psw {
+    float: left;
+    padding-top: 16px;
+    text-decoration: none;
+  }
+
+  span.snup {
+    float: right;
+    padding-top: 16px;
+  }
+  a:link { 
+      text-decoration: none;
+      color: #0464FC; 
+    }
+ 
+.signUpBox {
+    position: absolute;
+    width: 576px;
+    height: 560px;
+    left: 544px;
+    top: 0px;
+    background: rgba(255, 255, 255, 0.59);
+    border-radius: 40px 40px 40px 40px;
+    overflow: auto;
+    }
+
+.SignUpVector{
+    position: absolute;
+    width: 419px;
+    height: 450.97px;
+    left: 59px;
+    top: 85px;
+}
+
+
+.signUpEllipse{
+    position: absolute;
+    width: 181px;
+    height: 19px;
+    left: 162px;
+    top: 487px;
+
+}
+  
+.logo2{
+    position: absolute;
+    width: 340px;
+    height: 93.79px;
+    left: 110px;
+    top: 27px;
+}
+
+.SignUpContainer{
+    padding: 16px;
+    margin-top: 120px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* width */
+.signUpBox::-webkit-scrollbar {
+    width: 9px;
+  }
+  
+  /* Track */
+  .signUpBox::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    margin-top: 72px;
+    margin-bottom: 64px;
+  }
+   
+  /* Handle */
+  .signUpBox::-webkit-scrollbar-thumb {
+    background: #0464FC; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .signUpBox::-webkit-scrollbar-thumb:hover {
+    background: #0463fcc5; 
+  }
+
+  .signUplink label{
+    position: absolute;
+    width: 289.41px;
+    height: 47.15px;
+    right: 687.59px;
+    top: 500px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17.5201px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #272727;
+  }
+
+  .signUpBox p12{
+    position: absolute;
+    width: 417px;
+    height: 95px;
+    left: 16px;
+    top: 25px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 94px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #272727;
+}
+
+.ordersTable table{
+  font-family: "Poppins", sans-serif;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 92%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 300px;
+  margin-top: 30px;
+}
+
+.ordersTable td{
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 20px;
+  font-weight: normal;
+  width: 135px;
+  color: rgb(0, 0, 0);
+}
+
+.ordersTable th{
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 20px;
+  font-weight: normal;
+  width: 135px;
+  color: rgb(0, 0, 0);
+}
+
+.orderMiniTable{
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  top: 10px;
+  padding-top: 25px;
+  padding-left: 20px;
+  font-weight: normal;
+  width: 135px;
+  color: rgb(0, 0, 0);
+}
+
+.ordersTable::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+.ordersTable::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  margin-top: 72px;
+  margin-bottom: 64px;
+}
+ 
+/* Handle */
+.ordersTable::-webkit-scrollbar-thumb {
+  background: #0464FC; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.ordersTable::-webkit-scrollbar-thumb:hover {
+  background: #0463fcc5; 
+}
+
+.order-button {
+  background-color: #0464fc;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+  padding-left: 10px;
+  padding-right: 7px;
+  padding-top: 4px;
+  margin-left: 10px;
+  height: 28px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.status-container {
+  padding-left: 16px;
+  width: 114px;
+  height: 28px;
+  border-radius: 12px;
+  padding-top: 4px;
+}
+
+.invoiceTable table{
+  font-family: "Poppins", sans-serif;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 92%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 300px;
+  margin-top: 30px;
+}
+
+.invoiceTable td {
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 70px;
+  font-weight: normal;
+  width: 64px;
+  color: rgb(0, 0, 0);
+}
+.invoiceTable thead{
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 20px;
+  font-weight: normal;
+  width: 135px;
+  color: rgb(0, 0, 0);
+}
+
+.invoiceTable::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+.invoiceTable::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  margin-top: 72px;
+  margin-bottom: 64px;
+}
+ 
+/* Handle */
+.invoiceTable::-webkit-scrollbar-thumb {
+  background: #0464FC; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.invoiceTable::-webkit-scrollbar-thumb:hover {
+  background: #0463fcc5; 
+}
+
+.historyTable{
+  position: absolute;
+  width: 800px;
+  height: 386px;
+  left: 276px;
+  top: 138px;
+  background: rgba(255, 255, 255, 0.68);
+  border-radius: 30px;
+  overflow: auto;
+}
+
+.historyTable table{
+  font-family: "Poppins", sans-serif;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 92%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 300px;
+  margin-top: 30px;
+}
+
+.historyTable td{
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 65px;
+  font-weight: normal;
+  width: 81px;
+  color: rgb(0, 0, 0);
+}
+
+.historyTable thead{
+  font-family: "Poppins", sans-serif;
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 20px;
+  font-weight: normal;
+  width: 135px;
+  color: rgb(0, 0, 0);
+}
+
+.historyTable::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+.historyTable::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  margin-top: 72px;
+  margin-bottom: 64px;
+}
+ 
+/* Handle */
+.historyTable::-webkit-scrollbar-thumb {
+  background: #0464FC; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.historyTable::-webkit-scrollbar-thumb:hover {
+  background: #0463fcc5; 
+}
+
+.ProfileContainer{
+  padding: 16px;
+  margin-top: 16px;
+  font-family: "Poppins", sans-serif;
+}
+.profileBox {
+  position: absolute;
+  width: 576px;
+  height: 560px;
+  left: 0px;
+  top: 0px;
+  background: rgba(255, 255, 255, 0.59);
+  border-radius: 40px 40px 40px 40px;
+  overflow: auto;
+  }
+
+.ProfileUpVector{
+  position: absolute;
+  width: 264px;
+  height: 264px;
+  left: 716px;
+  top: 161px;
+}
+
+
+.ProfileEllipse{
+  position: absolute;
+  width: 206px;
+  height: 24px;
+  left: 750px;
+  top: 441px;
+
+}
+
+.profileLogo{
+  position: absolute;
+  width: 340px;
+  height: 93.79px;
+  left: 670px;
+  top: 46px;
+}
+
+.ProfileContainer{
+  padding: 16px;
+  margin-top: 5px;
+  font-family: "Poppins", sans-serif;
+}
+.profileBox p12{
+  position: absolute;
+  width: 417px;
+  height: 95px;
+  left: 86px;
+  top: 25px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 55px;
+  line-height: 94px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #272727;
+}
+
+.backNav {
+  width: 67px;
+  height: 63.79px;
+  margin-top: 40px;
+  margin-left: 12px;
+  padding-bottom: -10px;
+  padding-top: -1px;
+}
+
+.profileBox::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+.profileBox::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  margin-top: 72px;
+  margin-bottom: 64px;
+}
+ 
+/* Handle */
+.profileBox::-webkit-scrollbar-thumb {
+  background: #0464FC; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.profileBox::-webkit-scrollbar-thumb:hover {
+  background: #0463fcc5; 
+}
