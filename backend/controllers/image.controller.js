@@ -15,7 +15,7 @@ function upload(req,res){
 function show(req,res){
     const nic =req.params.nic;
     console.log(nic);
-	var sql = "SELECT * FROM `make_orders` WHERE id="+nic;
+	var sql = "SELECT * FROM `orders` WHERE nic="+nic;
 
     con.query(sql, function (err, result) {
         if (err){

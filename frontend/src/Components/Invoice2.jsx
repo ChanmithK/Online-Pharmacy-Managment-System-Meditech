@@ -1,13 +1,14 @@
 import React,{useEffect, useState} from 'react'
-import SignUpVector from "../images/signUpVector.png";
-import signUpEllipse from "../images/signUpEllipse.png";
-import logo2 from "../images/logo.png";
-import axios from 'axios'
 import { useStateValue } from '../StateProvider';
-import { actionTypes } from '../reducer';
-import { Link, useHistory } from "react-router-dom";
+import logo from "../images/logo.png";
+import Sidebar from "./Sidebar";
+import axios from 'axios'
+import logout from "../images/logout.png";
+import { Link } from "react-router-dom";
+import dateFormat from 'dateformat';
+import user1 from "../images/user.png";
 
-function ToDo (props){
+function ToDo (){
     const [{user}] = useStateValue();
     const [tableData, setTableData] = useState([]);
 
@@ -26,7 +27,7 @@ function ToDo (props){
 
     return(
         <form >
-            <div class="SignUpContainer">
+            <div >
                 <table>
                     <thead>
                         <tr>
@@ -40,9 +41,9 @@ function ToDo (props){
                         {tableData.map((row)=>{
                             return(
                                 <tr>
-                                    <td>{row.orderId}</td>
-                                    <td>{row.invoiceID}</td>
-                                    <td>{row.date}</td>
+                                    <td>{row.id}</td>
+                                    <td>{row.invoice_id}</td>
+                                    <td>{dateFormat(row.createdAt,"dd-mm-yyyy")}</td>
                                     <td>{row.amount}</td>
                                 </tr>
                             )
@@ -77,15 +78,15 @@ function CusUpdate() {
         </div>
         ):(
             <div className='MainContainer'>
-                <div className= "signUplink">
-                    <img src={logo2} className='logo2' />
-                    <img src={SignUpVector} className='SignUpVector' />
-                    <img src={signUpEllipse} className='signUpEllipse' />
-                </div>
-                <div className="signUpBox">
-                    <p12>Update Account</p12>
-                    <ToDo todo={todos}/>
-                </div>
+                <div className='containermini'>
+                <img src={logo} className='logo' />
+                <img src={user1} className='user' />
+                <Sidebar />
+                <img src={logout} className='logout' />
+            </div>
+            <div className="invoiceTable">
+               <ToDo todo={todos}/>
+            </div>
             </div>
         )}
     </>)

@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Praveen123",
-    "database": "meditech_pharmacy",
+    "database": "testnew",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

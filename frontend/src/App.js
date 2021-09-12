@@ -1,6 +1,6 @@
 import "./App.css";
 import home from "./Components/Home";
-import order from "./Components/order";
+import order from "./Components/Orders2";
 import history from "./Components/history";
 import invoice from "./Components/Invoice2";
 import imageViwer from "./Components/ImageViwer";

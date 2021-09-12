@@ -4,6 +4,6 @@ const checkAuthMiddleware = require('../middleware/check-auth');
  
 const router = express.Router(); 
  
-router.get("/", orderController.index); 
+router.get("/:nic", orderController.index); 
 
 module.exports = router;

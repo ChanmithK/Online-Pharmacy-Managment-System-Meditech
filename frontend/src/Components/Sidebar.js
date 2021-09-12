@@ -15,13 +15,6 @@ function Sidebar() {
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to='/invoice'
-					activeClassName='active-nav'
-					className='row'>
-					Invoice
-				</NavLink>
-				<NavLink
-					style={{ textDecoration: "none" }}
 					to='/orders'
 					activeClassName='active-nav'
 					className='row'>
@@ -29,11 +22,18 @@ function Sidebar() {
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
+					to='/invoice'
+					activeClassName='active-nav'
+					className='row'>
+					Invoice
+				</NavLink>
+				{/* <NavLink
+					style={{ textDecoration: "none" }}
 					to='/history'
 					activeClassName='active-nav'
 					className='row'>
 					History
-				</NavLink>
+				</NavLink> */}
 				<NavLink
 					style={{ textDecoration: "none" }}
 					to='/profile'

@@ -5,23 +5,24 @@ import Sidebar from "./Sidebar";
 import axios from 'axios'
 import logout from "../images/logout.png";
 import { Link } from "react-router-dom";
+import dateFormat from 'dateformat';
 
 const Todo = props => (
     <tr>
-        <td>{props.todo.orderId}</td>
-        <td>{props.todo.time}</td>
+        <td>{props.todo.order_id}</td>
+        <td>{dateFormat(props.todo.createdAt,"dd-mm-yyyy")}</td>
         <td>{props.todo.amount}</td>
         <>              
 
-            {props.todo.pharmacistStatus === "processing" && (
-                    <td><div className="status-container" style={{ backgroundColor: "#92EF00" }}>{props.todo.pharmacistStatus}
+            {props.todo.ph_status === "processing" && (
+                    <td><div className="status-container" style={{ backgroundColor: "#92EF00" }}>{props.todo.ph_status}
                     </div></td>
             )} 
-            {props.todo.pharmacistStatus === "unavailable" && (
-                    <td><div className="status-container" style={{ backgroundColor: "#FA1809" }}>{props.todo.pharmacistStatus}</div></td>
+            {props.todo.ph_status === "unavailable" && (
+                    <td><div className="status-container" style={{ backgroundColor: "#FA1809" }}>{props.todo.ph_status}</div></td>
             )} 
-            {props.todo.pharmacistStatus === "pending" && (
-                    <td><div className="status-container" style={{ backgroundColor: "#F5FA09" }}>{props.todo.pharmacistStatus}</div>
+            {props.todo.ph_status === "pending" && (
+                    <td><div className="status-container" style={{ backgroundColor: "#F5FA09" }}>{props.todo.ph_status}</div>
                         </td>
             )} 
             </>
@@ -32,19 +33,19 @@ const Todo = props => (
         
         <>              
 
-                {props.todo.pharmacistStatus === "processing" && (
+                {props.todo.ph_status === "processing" && (
                     <div>    
                          <td> <Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc52" }}>Accept</button></Link></td>
                          <td><Link to = {"props.nic"}><button className="order-button"style={{ backgroundColor: "#0464fc" }}>Deny</button></Link></td> 
                     </div>
                 )} 
-                {props.todo.pharmacistStatus === "unavailable" && (
+                {props.todo.ph_status === "unavailable" && (
                     <div>    
                         <td> <Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }} >Accept</button></Link></td>
                         <td><Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>Deny</button></Link></td> 
                    </div>
                 )} 
-                {props.todo.pharmacistStatus === "pending" && (
+                {props.todo.ph_status === "pending" && (
                     <div>    
                         <td> <Link to = {"props.nic"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>Accept</button></Link></td>
                         <td><Link to = {"props.nic"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>Deny</button></Link></td> 
@@ -105,21 +106,7 @@ class Order extends Component {
                 
             </div>
             <div className="ordersTable">
-                <table>
-                    <thead>
-                        <tr>
-                           <th style={{paddingLeft: "0px"}} >Order ID</th> 
-                           <th style={{paddingLeft: "0px"}}>Time</th> 
-                           <th style={{paddingLeft: "0px"}}>Amount</th> 
-                           <th style={{paddingLeft: "12px"}}>Status</th>
-                           <th style={{paddingLeft: "52px"}}>Invoice</th>  
-                           {/* <th style={{paddingLeft: "52px"}}>Action</th>  */}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { this.orderList() }
-                    </tbody>
-                </table>
+               <ToDo todo={todos}/>
             </div>
         </div>
     )

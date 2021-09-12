@@ -173,7 +173,9 @@ function CusUpdate() {
                 <div className="profileBox">
                     <Link to ="/profile" ><img src={backNav} className='backNav' /></Link>
                     <p12>Profile Update</p12>
+                    <div className="profileBox1">
                     <ToDo todo={todos}/>
+                    </div>
                 </div>
             </div>
         )}

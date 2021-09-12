@@ -126,7 +126,9 @@ function CusProfile2() {
                 <div className="profileBox">
                     <Link to ="/home" ><img src={backNav} className='backNav' /></Link>
                     <p12>Profile</p12>
+                    <div className="profileBox1">
                     <ToDo todo={todos}/>
+                    </div>
                 </div>
             </div>
         )}
