@@ -16,7 +16,8 @@ const storage = multer.diskStorage({
      var nameMain =  new Date().getTime();
      name =nameMain+ path.extname(file.originalname);
      console.log(req)
-     var sql= "UPDATE `orders` SET `prescription` ="+nameMain+" WHERE `nic` ="+nic;
+      var sql= "UPDATE `orders` SET `prescription` ="+nameMain+" WHERE `nic` ="+nic;
+    // var sql = "INSERT INTO orders (nic,prescription) VALUES ('200021702506','1631469523416')";
      con.query(sql, function (err, result) {
     });
      cb(null, name);

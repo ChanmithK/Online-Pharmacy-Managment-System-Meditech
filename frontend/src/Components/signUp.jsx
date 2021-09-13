@@ -125,7 +125,10 @@ class  SignUp extends Component {
             }
     
             axios.post('http://localhost:4003/customer/sign-up', newSignUp)
-            .then(res => { this.props.history.push('/home')});
+            .then(res => { this.props.history.push('/home')})
+            .catch ((e) => {
+                alert("Try another NIC");
+            });
            
     
             this.setState({

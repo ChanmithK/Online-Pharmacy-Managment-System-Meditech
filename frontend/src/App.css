@@ -1,3 +1,7 @@
+*,*:hover,*.active{
+  outline: none;
+}
+
 .App {
 	width: 100vw;
 	height: 100vh;
@@ -64,7 +68,8 @@ body {
 	width: 1120px;
 	height: 560px;
 	right: 80px;
-	left: 80px;
+	/* left: 80px; */
+  left: 58px;
 	top: 80px;
 	bottom: 80px;
 	background: rgba(255, 255, 255, 0.51);
@@ -336,7 +341,7 @@ body {
 .makeOrderbox2{
     position: absolute;
     width: 303px;
-    height: 58px;
+    height: 229px;
     right: 32px;
     top: 142px;
     background: #FFFFFF;
@@ -372,8 +377,8 @@ input[type=file]::file-selector-button {
 
   .makeOrderAttach{
     position: absolute;
-    right: 44px;
-    top: 18px;
+    right: -13px;
+    top: 112px;
   }
   
   .makeOrderbox1 label1{
@@ -791,6 +796,7 @@ input[type=text], input[type=password], input[type=number],input[type=tel] {
   max-height: 300px;
   margin-top: 30px;
 }
+
 
 .ordersTable td{
   font-family: "Poppins", sans-serif;

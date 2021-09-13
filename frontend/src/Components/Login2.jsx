@@ -32,7 +32,7 @@ function Login2() {
                 user: nic,
                 token: res.data.token,
             });
-            history.push("/");
+            history.push("/home");
         })
         .catch ((e) => {
             alert("You have entered an invalid username or password");

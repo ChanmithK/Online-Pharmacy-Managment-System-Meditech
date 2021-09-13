@@ -6,7 +6,7 @@ function invoice(req,res){
     const nic =req.params.nic;
     console.log(nic);
 
-    var sql = "SELECT orders.id, invoices.invoice_id, invoices.createdAt,invoices.amount FROM invoices, orders WHERE orders.id=invoices.order_id";
+    var sql = "SELECT orders.id, invoices.invoice_id, invoices.createdAt,invoices.amount FROM invoices, orders WHERE orders.ph_status ='processing' AND  orders.id=invoices.order_id and invoices.nic="+nic;
 
     con.query(sql, function (err, result) {
         if (err){

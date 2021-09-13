@@ -56,10 +56,6 @@ function Order() {
                     <div className="makeOrderbox2">
                         <input className="makeOrderAttach" type="file" onChange ={onInputChange} id="fileUpload"/>
                     </div>
-                    <label1 for="fileUpload">Description</label1>
-                    {/* <div className="makeOrderbox3">
-                        <textarea rows="4" cols="50" className="makeOrderDesc" name="comment" placeholder="Enter Description" form="usrform"/>
-                    </div> */}
                    <button type="submit" className = "MakeOrderButton" >Submit</button>
                     <ToastContainer />
                 </form>

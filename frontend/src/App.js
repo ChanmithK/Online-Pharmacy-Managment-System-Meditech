@@ -9,6 +9,7 @@ import login from "./Components/Login2"
 import signUp from "./Components/signUp";
 import profileUpdate from "./Components/cusProfileUpdate2"
 import profile from "./Components/cusProfile2"
+import description from "./Components/description"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from './StateProvider';
 import { actionTypes } from './reducer';
@@ -32,7 +33,7 @@ function App() {
 		<Router>
 			<div className='App'>
 				<Switch>
-					<Route exact path='/'  component={home} />
+					<Route exact path='/'  component={login} />
 				    <Route path='/home' component={home} />
 					<Route path='/orders' component={order} />
 					<Route path='/invoice' component={invoice} />
@@ -43,6 +44,7 @@ function App() {
 					<Route path='/imageViwer' component={imageViwer} />
 					<Route path='/profile' component={profile} />
 					<Route path='/profileUpdate' component={profileUpdate} />
+					<Route path='/description' component={description} />
 				</Switch>
 			</div>
 		</Router>

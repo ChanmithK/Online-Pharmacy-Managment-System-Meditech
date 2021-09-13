@@ -31,7 +31,7 @@ function Home() {
                     <img src={homeVector} className='homeVector' />
                     <img src={homeEllipse} className='homeEllipse' />
                     <p1>PRESCRIPTION medicine at your DOORSTEP</p1>
-                    <Link to= "/makeOrder">
+                    <Link to= "/description">
                         <button type="button" className = "homeButton" >Order Now</button>
                     </Link>
                 </div>

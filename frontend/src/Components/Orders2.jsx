@@ -60,11 +60,20 @@ function ToDo (props){
                                                  </td>
                                      )} 
                                      </>
-                                 
-                                 <td>
-                                     <Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>View</button></Link>
-                                 </td>
-                                 
+                                     {row.ph_status === "processing" && (
+                                               
+                                                 <td> <Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>View</button></Link> </td>
+                                             
+                                         )} 
+                                         {row.ph_status === "pending" && (
+                                              
+                                                 <td> <Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>View</button></Link> </td>
+                                            
+                                         )} 
+                                         {row.ph_status === "unavailable" && (
+                                             <td> <Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc52" }}>View</button></Link> </td>
+                                         )} 
+                        
                                  <>              
                                          {row.ph_status === "processing" && (
                                              <div>    
