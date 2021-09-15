@@ -65,12 +65,45 @@ function index(req,res){
     //     });
     //     }
 
+    function processingCount(req,res){
+        const nic =req.params.nic;
+    console.log(nic);
+
+    var sql = 'SELECT * FROM orders WHERE ph_status = "processing" and nic='+nic;
+
+    con.query(sql, function (err, result) {
+        if (err){
+            console.error(err);
+        } else {
+            console.log(result);
+            res.status(200).send(result);
+        }
+    });
+    }
+    
+    function pendingCount(req,res){
+        const nic =req.params.nic;
+    console.log(nic);
+
+    var sql = 'SELECT * FROM orders WHERE ph_status = "pending" and nic='+nic;
+
+    con.query(sql, function (err, result) {
+        if (err){
+            console.error(err);
+        } else {
+            console.log(result);
+            res.status(200).send(result);
+        }
+    });
+    }
 
 
     
     module.exports ={
         index:index,
         destroy:destroy,
-        order:order
+        order:order,
+        processingCount:processingCount,
+        pendingCount:pendingCount
         // update:update
     }

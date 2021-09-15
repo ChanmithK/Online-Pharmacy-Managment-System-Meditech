@@ -4,11 +4,12 @@ import logo from "../images/logo.png";
 import Sidebar from "./Sidebar";
 import axios from 'axios'
 import logout from "../images/logout.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import dateFormat from 'dateformat';
 import user1 from "../images/user.png";
 
 function ToDo (props){
+    const history = useHistory();
     const [{user}] = useStateValue();
     const [tableData, setTableData] = useState([]);
 
@@ -24,6 +25,18 @@ function ToDo (props){
     const handleSubmit = (e) => {
         e.preventDefault();
     }
+
+   const onDelete = (id) => {
+        axios.delete('http://localhost:4003/order/'+id)
+        .then(response => {
+            alert(id+" Order Denied");
+            // history.push("/orders");
+            window.location.reload(false);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+    };
 
     return(
         <form >
@@ -84,13 +97,15 @@ function ToDo (props){
                                          {row.ph_status === "unavailable" && (
                                              <div>    
                                                  <td> <Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc52" }} >Accept</button></Link></td>
-                                                 <td><Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>Deny</button></Link></td> 
+                                                 <td><Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}
+                                                 onClick={() =>onDelete(row.id)}>Deny</button></Link></td> 
                                             </div>
                                          )} 
                                          {row.ph_status === "pending" && (
                                              <div>    
                                                  <td> <Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>Accept</button></Link></td>
-                                                 <td><Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}>Deny</button></Link></td> 
+                                                 <td><Link to = {"#"}><button className="order-button" style={{ backgroundColor: "#0464fc" }}
+                                                 onClick={() =>onDelete(row.id)}>Deny</button></Link></td> 
                                             </div>
                                          )} 
                                  </> 
@@ -104,22 +119,51 @@ function ToDo (props){
     );
 }
 
-function Orders() {
 
+function Orders() {
+    const [orderCount, setOrderCount] = useState(0);
+    const [processingCount, setProcessingCount] = useState(0);
+    const [pendingCount, setPendingCount] = useState(0);
     const [todos, setTodos] = useState([]);
     const [{user}] = useStateValue();
 
     useEffect(() => {
-
-        axios.get('http://localhost:4003/invoice/'+user)
+        
+        axios.get('http://localhost:4003/order/'+user)
         .then(response => {
-            setTodos(response.data);
+            setOrderCount(response.data.length);
         })
         .catch(function (error) {
             console.log(error);
+        });
+        
+        axios.get('http://localhost:4003/order/count/'+user)
+        .then(response => {
+            setProcessingCount(response.data.length);
         })
+        .catch(function (error) {
+            console.log(error);
+        });
+        axios.get('http://localhost:4003/order/pendingCount/'+user)
+        .then(response => {
+            setPendingCount(response.data.length);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}, []);
 
-    }, []);
+// useEffect(() => {
+
+//     axios.get('http://localhost:4003/order/count/'+user)
+//     .then(response => {
+//         setProcessingCount(response.data.length);
+//     })
+//     .catch(function (error) {
+//         console.log(error);
+//     });
+// }, []);
+   
 
     return (<>
         {!user?(<div>
@@ -133,7 +177,7 @@ function Orders() {
             
             <div className="ordersMiniBox1">
                 <p10>Processing</p10>
-
+                
             </div>
             <div className="ordersMiniBox2">
                 <p9>Pending</p9>
@@ -141,6 +185,7 @@ function Orders() {
             </div>
             <div className="ordersMiniBox3">
                 <p8>Orders</p8>
+                
                 
             </div>
             <div className="ordersTable">
@@ -161,14 +206,17 @@ function Orders() {
             
             <div className="ordersMiniBox1">
                 <p10>Processing</p10>
+                <p16>{processingCount}</p16>
 
             </div>
             <div className="ordersMiniBox2">
                 <p9>Pending</p9>
+                <p17>{pendingCount}</p17>
 
             </div>
             <div className="ordersMiniBox3">
                 <p8>Orders</p8>
+                <p15>{orderCount}</p15>
                 
             </div>
             <div className="ordersTable">

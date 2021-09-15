@@ -1,17 +1,21 @@
-import React, {useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import logo from "../images/logo.png";
-import user from "../images/user.png";
+import user1 from "../images/user.png";
 import Sidebar from "./Sidebar";
 import logout1 from "../images/logout.png";
 import homeVector from "../images/homevector.png"
 import homeEllipse from "../images/homeEllipse.png"
 import homeBanner from "../images/banner.png"
 import { Link,useHistory } from "react-router-dom";
+import axios from 'axios'
+import { useStateValue } from '../StateProvider';
 
  
 
 function Home() {
-
+    const [orderCount, setOrderCount] = useState(0);
+    const [processingCount, setProcessingCount] = useState(0);
+    const [{user}] = useStateValue();
     const history =useHistory();
     const [payableCount] = useState("08");
     const [activeCount] = useState("03");
@@ -19,11 +23,31 @@ function Home() {
         localStorage.removeItem("user");
         history.push("/login");
     }
+    
+    useEffect(() => {
+        
+        axios.get('http://localhost:4003/order/'+user)
+        .then(response => {
+            setOrderCount(response.data.length);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+        
+        axios.get('http://localhost:4003/order/count/'+user)
+        .then(response => {
+            setProcessingCount(response.data.length);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}, []);
+
     return (
         <div className='MainContainer'>
                 <div className='containermini'>
                     <img src={logo} className='logo' />
-                    <img src={user} className='user' />
+                    <img src={user1} className='user' />
                     <Sidebar />
                     <img src={logout1} onClick={logout} className='logout' />
                 </div>
@@ -40,11 +64,11 @@ function Home() {
                 </div>
                 <div className = "homebox3">
                     <p2>Active</p2>  
-                    <p5>{activeCount}</p5> 
+                    <p5>{orderCount}</p5> 
                 </div>
                 <div className = "homebox4">
                     <p3>Payable</p3>
-                    <p4>{payableCount}</p4>     
+                    <p4>{processingCount}</p4>     
                 </div>
         </div>
     )

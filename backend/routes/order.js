@@ -7,4 +7,6 @@ const router = express.Router();
 router.get("/:nic", orderController.index); 
 router.delete("/:id", orderController.destroy);
 router.post("/makeOrder", orderController.order);
+router.get("/count/:nic", orderController.processingCount); 
+router.get("/pendingCount/:nic", orderController.pendingCount); 
 module.exports = router;

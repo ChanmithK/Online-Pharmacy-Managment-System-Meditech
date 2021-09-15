@@ -448,16 +448,16 @@ input[type=file]::file-selector-button {
 } */
 
 .ImageViewe{
-    width: 521px;
-    padding-left: 111px;
-    margin-left: 362px;
-    margin-top: 103px;
+  width: 428px;
+  padding-left: 115px;
+  margin-left: 110px;
+  margin-top: 29px;
 }
 .ImageBox{
   position: absolute;
-  width: 330px;
+  width: 769px;
   height: 480px;
-  left: 289px;
+  left: 293px;
   top: 42px;
   background: rgba(255, 255, 255, 0.68);
   border-radius: 40px;
@@ -1104,4 +1104,48 @@ input[type=text], input[type=password], input[type=number],input[type=tel] {
 /* Handle on hover */
 .profileBox1::-webkit-scrollbar-thumb:hover {
   background: #0463fcc5; 
+}
+
+.ordersMiniBox3 p15{
+  position: absolute;
+  width: 250px;
+  height: 64px;
+  left: -14px;
+  top: 65px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 26px;
+  text-align: center;
+  color: #2c646d;
+}
+.ordersMiniBox1 p16{
+  position: absolute;
+  width: 250px;
+  height: 64px;
+  left: -14px;
+  top: 65px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 26px;
+  text-align: center;
+  color: #2c646d;
+}
+
+.ordersMiniBox2 p17{
+  position: absolute;
+  width: 250px;
+  height: 64px;
+  left: -14px;
+  top: 65px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 26px;
+  text-align: center;
+  color: #2c646d;
 }

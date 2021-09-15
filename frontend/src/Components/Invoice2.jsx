@@ -55,7 +55,7 @@ function ToDo (){
     );
 }
 
-function CusUpdate() {
+function Invoice() {
 
     const [todos, setTodos] = useState([]);
     const [{user}] = useStateValue();
@@ -95,4 +95,4 @@ function CusUpdate() {
 
 }
 
-export default CusUpdate
+export default Invoice
