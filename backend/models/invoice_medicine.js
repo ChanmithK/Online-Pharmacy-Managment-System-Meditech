@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Invoice_medicine.init({
+    invoiceID: DataTypes.INTEGER,
     med_name: DataTypes.STRING,
     quantity: DataTypes.INTEGER,
     total: DataTypes.INTEGER

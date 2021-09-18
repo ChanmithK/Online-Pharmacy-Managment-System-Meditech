@@ -18,10 +18,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       ph_status: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue:"pending"
       },
       cus_status: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue:"waiting"
       },
       createdAt: {
         allowNull: false,

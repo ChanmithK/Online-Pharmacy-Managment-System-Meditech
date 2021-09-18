@@ -20,6 +20,7 @@ class  SignUp extends Component {
             this.onChangeProvince = this.onChangeProvince.bind(this);
             this.onChangePcode = this.onChangePcode.bind(this);
             this.onChangePassword = this.onChangePassword.bind(this);
+            this.onChangePassword2 = this.onChangePassword2.bind(this);
             this.onSubmit = this.onSubmit.bind(this);
     
             this.state = {
@@ -33,6 +34,7 @@ class  SignUp extends Component {
                 province:'',
                 pCode:'',
                 password:'',
+                password2: "",
                 submit:false
             }
         }
@@ -89,9 +91,14 @@ class  SignUp extends Component {
                 password: e.target.value
             });
         }
-        
+
+        onChangePassword2(e) {
+            this.setState({ password2: e.target.value });
+        }
+
         onSubmit(e) {
             e.preventDefault();
+            // window.location.reload(false);
             
     
             console.log(`Form submitted:`);
@@ -107,9 +114,10 @@ class  SignUp extends Component {
             console.log(`password: ${this.state.password}`);
             console.log(`submit: ${this.state.submit}`);
             
-
-
-    
+            
+            if (this.state.password !== this.state.password2) {
+                alert("Password mismatch");
+            } else {
             const newSignUp = {
                 nic:this.state.nic,
                 firstName:this.state.firstName,
@@ -142,8 +150,10 @@ class  SignUp extends Component {
                 province:'',
                 pCode:'',
                 password:'',
+                password2: "",
                 submit:false
             })
+        }
     
         }
         
@@ -203,9 +213,25 @@ class  SignUp extends Component {
                             <tr>
                                 <td>
                                 <label for="province" ><b>Province</b>
-                                <input type="text" name="province"  value={this.state.province}
-                           onChange = {this.onChangeProvince} required/>
-                                  </label>
+                                {/* <input type="text" name="province"  value={this.state.province}
+                           onChange = {this.onChangeProvince} required/> */}
+                                 
+                                  <select
+											id='role'
+											className='cusProvince'
+											value={this.state.province}
+											onChange = {this.onChangeProvince}>
+											<option value="Central">Central</option>
+                                            <option value="Eastern">Eastern</option>
+                                            <option value=" North Central"> North Central</option>
+                                            <option value="Northern">Northern</option>
+                                            <option value="North Western">North Western</option>
+                                            <option value="Sabaragamuwa">Sabaragamuwa</option>
+                                            <option value="Southern">Southern</option>
+                                            <option value="Uva">Uva</option>
+                                            <option value=" Western"> Western</option>
+										</select>
+                                        </label>
                                 </td>&nbsp; &nbsp;
                                 <td>
                                 <label for="pcode"><b>Postal code</b></label>
@@ -216,10 +242,14 @@ class  SignUp extends Component {
                         </table>
 
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" name="psw" value={this.state.password}
+                        <input type="password" name="password" value={this.state.password}
                            onChange = {this.onChangePassword}/>     
-                        {/* <label for="cpsw"><b>Confirm Password</b></label>
-                        <input type="password" name="cpsw" required/> */}
+                        <label for="cpsw"><b>Confirm Password</b></label>
+                        <input type='password'
+											    name='password2'
+												value={this.state.password2}
+												onChange={this.onChangePassword2}
+												required/>
                         <button type="submit">Sign up</button>
                         
                     </div>

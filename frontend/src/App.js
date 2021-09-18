@@ -9,6 +9,7 @@ import login from "./Components/Login2"
 import signUp from "./Components/signUp";
 import profileUpdate from "./Components/cusProfileUpdate2"
 import profile from "./Components/cusProfile2"
+import invoiceView from "./Components/invoiceView"
 import description from "./Components/description"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from './StateProvider';
@@ -42,6 +43,7 @@ function App() {
 					<Route path='/login' component={login} />
 					<Route path='/signUp' component={signUp} />
 					<Route path='/imageViwer' component={imageViwer} />
+					<Route path='/invoiceView/:id' component={invoiceView} />
 					<Route path='/profile' component={profile} />
 					<Route path='/profileUpdate' component={profileUpdate} />
 					<Route path='/description' component={description} />
